@@ -4,12 +4,22 @@ import ValidationComponent from './components/ValidationComponent';
 import CharComponent from './components/CharComponent';
 
 class App extends Component {
-  state = { 
-    message: ''
+  constructor(props){
+    super(props);
+      this.state = { 
+        message: ''
    }
+   this.handleDelete = this.handleDelete.bind(this);
+   this.handleChange = this.handleChange.bind(this);
+  }
   
-   handleDelete = (event) => {
-     
+   handleDelete = (index) => {
+     let userInput = this.state.message.split(' ');
+     userInput.splice(index, 1);
+     let updatedInput = userInput.join(' ');
+     this.setState({
+       message: updatedInput
+     });
    }
 
   handleChange = (event) => {
@@ -34,7 +44,7 @@ class App extends Component {
           />
           <CharComponent 
             delete={this.handleDelete}
-            seperate={this.state.message}
+            seperate={this.state.message} 
             value={this.state.message}
           />
       </div>

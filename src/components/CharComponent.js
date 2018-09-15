@@ -7,6 +7,7 @@ const CharComponent = (props) => {
         padding: 16,
         textAlign: 'center',
         margin: 16,
+        marginRight: '3.7%',
         border: '2px solid black',
         borderRadius: 2,
         background: 'white',
@@ -23,15 +24,15 @@ const CharComponent = (props) => {
 
     
                                         //!I like doing it as words rather than letters
-   let finishedProduct = props.seperate.split(' ').map((letters, index) => {
+   let finishedProduct = props.seperate.split(' ').map((words, index) => {
         return(
 
             <div
-              onClick={props.delete} 
               key={index}
+              onClick={props.delete} 
               style={charStyles}>
                 
-                    <li style={dotBeGone}>{letters}</li>
+                    <li style={dotBeGone}>{words}</li>
                 
             </div>
         );
