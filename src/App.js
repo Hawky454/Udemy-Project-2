@@ -8,20 +8,15 @@ class App extends Component {
     message: ''
    }
   
-   handleDelete = (letterIndex) => {
-    let messageArr = this.state.message.split(' ');
-    messageArr.splice(, 1);
-    this.setState({
-      message: messageArr
-    })
-    console.log(messageArr);
-  }
+   handleDelete = (event) => {
+     
+   }
 
   handleChange = (event) => {
     const message = event.target.value;
     this.setState({
       message: message
-    })
+    });
   }
   
 
@@ -30,6 +25,7 @@ class App extends Component {
       <div className="App">
         <input
           onChange={this.handleChange} 
+          value={this.state.message}
           type="text"
           className="input" />
           <p>{this.state.message}</p>
@@ -37,8 +33,9 @@ class App extends Component {
             length={this.state.message.length}
           />
           <CharComponent 
-            delete={() => this.handleDelete(event)}
+            delete={this.handleDelete}
             seperate={this.state.message}
+            value={this.state.message}
           />
       </div>
     );

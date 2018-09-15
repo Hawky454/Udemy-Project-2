@@ -38,6 +38,8 @@ const CharComponent = (props) => {
     });
     
     return <ul>{finishedProduct}</ul>
+
+    
     
 
 
