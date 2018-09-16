@@ -31,6 +31,9 @@ class App extends Component {
   
 
   render() { 
+    //!this allows me to delete by index number in array when passing through the func but it still only either deletes from beginning of the array or the end... this allows it to delete from the end, inwhich I prefer
+    let index = this.state.message.split(' ').length -1;
+    console.log(index);
     return (  
       <div className="App">
         <input
@@ -43,7 +46,7 @@ class App extends Component {
             length={this.state.message.length}
           />
           <CharComponent 
-            delete={this.handleDelete}
+            delete={() => this.handleDelete(index)}
             seperate={this.state.message} 
             value={this.state.message}
           />

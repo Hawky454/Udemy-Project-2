@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 const CharComponent = (props) => {
 
     let charStyles = {
